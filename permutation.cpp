@@ -1,6 +1,10 @@
+
+
+// leetcode problem no # 567. Permutation in String
+
+
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 // Helper function to check if two frequency arrays are equal
