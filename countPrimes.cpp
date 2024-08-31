@@ -1,6 +1,6 @@
 
 // leetcode problem no #204. Count Primes
-
+//sieve of eratosthenes  method
 #include <iostream>
 #include <vector>
 
