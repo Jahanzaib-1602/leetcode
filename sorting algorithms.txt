@@ -1,0 +1,43 @@
+Selection Sort:
+
+in "selection sort" we find the smallest element from the array and placed it in the beginning 
+The time complexity of selection sort is 𝑂(𝑛^2) making it inefficient on large lists .
+Selection Sort is unstable
+
+void selectionSort(int * arr , int n){
+    for(int i = 0 ; i < n-1; i ++){
+        int min_index = i;
+            for(int j = i + 1 ; j<n ; j++){
+                if(arr[j]<arr[min_index])
+                    min_index = j;
+            }
+            swap(arr[min_index] , arr[i]);
+    }
+}
+
+
+
+Insertion Sort 
+
+we suppose that the very first element of an array is already sorted and pick an element from unsorted array and compare , if the element that is already in the sorted position is greater than the picked element that shift that larger element one position to the right to make space for the new element.
+Insertion Sort is stable 
+Time Complexity: Average and worst-case 𝑂(𝑛^2)  but best-case is 𝑂(𝑛) when the array is already sorted.
+Space Complexity:  𝑂(1)
+
+void insertionSort(int arr[], int n) {
+    for (int i = 1; i < n; i++) {  // Start at i = 1, because the first element is trivially sorted
+        int temp = arr[i];
+        int j = i - 1;
+
+        while (j >= 0 && arr[j] > temp) {
+            arr[j + 1] = arr[j];
+            j--;
+        }
+
+        arr[j + 1] = temp;  
+    }
+}
+
+Bubble Sort
+
+Begin with the first element of the list.Compare the current element with the one next to it.If the current element is greater than the next one, swap them. Move to the next pair of adjacent elements and repeat the comparison and swap if needed.Continue this process for the entire list. After one complete pass, the largest element will be at the end of the list. Repeat the process for the remaining unsorted elements until no swaps are needed, meaning the list is sorted.
