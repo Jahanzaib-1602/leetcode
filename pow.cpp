@@ -1,40 +1,45 @@
 
 // leetcode problem no # 50. Pow(x, n)
-
 #include <iostream>
 using namespace std;
 
-class Solution {
-public:
-
-    // time complexity is log(n)
-    double solve(double x, long n) {
-        if (n == 0) {
-            return 1;
-        }
-        if (n < 0) {
-            return solve(1 / x, -n);
-        }
-        if (n % 2 == 0) {
-            return solve(x * x, n / 2);
-        }
-        return x * solve(x * x, (n - 1) / 2);
+double myPow(double x, long n) {
+    if (n < 0) {
+        return 1.0 / myPow(x, -n);
     }
 
-    double myPow(double x, int n) {
-        return solve(x, long(n));
+    // Base cases
+    if (n == 0) { 
+        return 1;
     }
-};
+    if (n == 1) {
+        return x;
+    }
+
+    // Recursive call
+    double ans = myPow(x, n / 2);
+
+    // If n is even
+    if (n % 2 == 0) {
+        return ans * ans;
+    } else {
+        // If n is odd
+        return x * ans * ans;
+    }
+}
 
 int main() {
-    Solution solution;
+    double x;
+    long n;
 
-    double x = 2.0; 
-    int n = 10;    
+    // Example input
+    cout << "Enter base (x): ";
+    cin >> x;
+    cout << "Enter exponent (n): ";
+    cin >> n;
 
-    double result = solution.myPow(x, n);
-
-    cout << x << " raised to the power of " << n << " is: " << result << endl;
+    double result = myPow(x, n);
+    cout << x << "^" << n << " = " << result << endl;
 
     return 0;
 }
