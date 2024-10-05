@@ -41,3 +41,38 @@ void insertionSort(int arr[], int n) {
 Bubble Sort
 
 Begin with the first element of the list.Compare the current element with the one next to it.If the current element is greater than the next one, swap them. Move to the next pair of adjacent elements and repeat the comparison and swap if needed.Continue this process for the entire list. After one complete pass, the largest element will be at the end of the list. Repeat the process for the remaining unsorted elements until no swaps are needed, meaning the list is sorted.
+Average and worst-case time complexity of 𝑂(𝑛^2) and in best case it will be O(n) and it is a inplace sorting algorithm it means it doesn't acquire extra space and it is a stable algorithm.
+
+void bubbleSort(vector<int>& arr, int n) { // Pass by reference
+    for (int i = 1; i < n; i++) {
+        bool swapped = false;
+        for (int j = 0; j < n - i; j++) {
+            if (arr[j] > arr[j + 1]) {
+                swap(arr[j], arr[j + 1]);
+                swapped = true;
+            }
+        }
+        if (!swapped) {
+            break; // It means already sorted
+        }
+    }
+}
+
+Merge Sort
+
+ Merge sort is one of the most efficient sorting algorithms. It is based on the divide-and-conquer strategy. Merge sort continuously cuts down a list into multiple sublists until each has only one item, then merges those sublists into a sorted list
+In all three cases its time complexity is O(n log n) and it is a stable algorithm and it in not a inplace algorithm because it takes an extra memory for creatinf the temporary array o(n)
+
+Quick Sort
+
+QuickSort is a sorting algorithm based on the Divide and Conquer that picks an element as a pivot and partitions the given array around the picked pivot by placing the pivot in its correct position in the sorted array.  
+Quick Sort is an in-place sorting algorithm, meaning it does not require additional space.
+Average and best case time complexity is O(nlogn) and worst-case time complexity of 𝑂(𝑛^2).
+It is not a stable algorithm.
+
+why quick sort is preffered over merge sort in sorting arrays and why its vice versa in linked list?
+1) Many implementations of Quick Sort can optimize for tail recursion, which reduces the recursion depth and the overhead associated with recursive function calls.
+Merge Sort doesn't have this advantage and requires a more complicated recursion stack.
+2) Quick Sort is more cache-friendly because of its in-place nature.  
+Merge Sort needs to create additional arrays (or memory) to store and merge data, so it jumps around different memory locations more frequently. 
+
