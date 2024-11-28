@@ -37,13 +37,15 @@ Node* reverse1(Node* head){
     if(head == NULL || head->next ==NULL){
         return head;
     }
-    Node* smallhead = reverse1(head->next);
-    head->next->next = head;
+    Node* newhead = reverse1(head->next);
+    Node* front = head->next;
+    front->next = head;
     head->next = NULL;
-    return smallhead;
+    return newhead;
 }
 Node* reverseLinkedList(Node * head){
     return reverse1(head)
 }
 
 // in all three cases the time complexity is O(N)
+// and the space complexity for recursive approach is O(N) cz this is using the space of recursive stack
