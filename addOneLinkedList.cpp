@@ -1,5 +1,5 @@
-// this is also done by using the iterative approach but in that approach the time complexity will be O(3N) so it is not an optimal apprach and the space complexity is constant i.e O(1);
-// the pesudo code for that apprach is given below
+// this is  done by using the iterative approach but in this approach the time complexity will be O(3N) it is not an optimal apprach and the space complexity is constant i.e O(1);
+// the pesudo code for this apprach is given below
 // it is done in three steps first step is to reverse the linkedList bcz  let suupose the linkedList is 2->5->9 and we have to add the 1 in the 9 first not in the 2 so we have to reverse the linkedList
 Node* reverse(Node* head){
     if(head == NULL || head->next ==NULL){
