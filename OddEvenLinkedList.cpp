@@ -1,4 +1,3 @@
-
 if(head ==NULL || head->next ==NULL){
     return head;
 }
@@ -49,4 +48,4 @@ so overall the timecomplexity becomes the O(2N) and the space complexity becomes
         odd->next = evenHead;
         return head;
     }
-    // its time complexity becomes O(N) and space complexity becomes O(1)
+    // its time complexity becomes O(N) and space complexity becomes O(1)  
