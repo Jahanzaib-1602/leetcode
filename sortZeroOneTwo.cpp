@@ -5,7 +5,7 @@ if(head == NULL || head->next == NULL)
 // dummy nodes creation as well as assign it with -1
 Node* zeroHead = new Node(-1);
 Node* oneHead = new Node(-1);
-Node* twoHead = new Node(-1);
+Node* twoHead = new Node(-1); 
 
 Node* zero = zeroHead;
 Node* one = oneHead;
